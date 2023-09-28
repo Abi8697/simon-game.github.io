@@ -1,8 +1,8 @@
-//step-2
+
 var buttonColours = ["red", "blue", "green", "yellow"];
-//step-2
+
 var gamePattern = [];
-//step-4
+
 var userClickedPattern = [];
 
 var started = false;
@@ -11,7 +11,7 @@ var level = 0;
 
 $(document).keypress(function () {
   if (!started) {
-    $("#level-title").text("Level" + level);
+    $("#level-title").text("Level-" + level);
     nextSequence();
     started = true;
   }
@@ -50,8 +50,7 @@ function checkAnswer(currentLevel) {
   }
 }
 
-//userClickedPattern.push(userChosenColour);
-//step-2
+
 function nextSequence() {
   userClickedPattern = [];
   level++;
@@ -62,13 +61,13 @@ function nextSequence() {
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
 
-  //step-3
+  
   $("#" + randomChosenColour)
     .fadeIn("100")
     .fadeOut("100")
     .fadeIn("100");
 
-  //step-3
+  
 
   playSound(randomChosenColour);
 }
@@ -92,4 +91,3 @@ function startOver() {
   started = false;
 }
 
-//step-4
